@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "GetCalculate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Calculator [Get Method]</h2>
+
+@using (Html.BeginForm("GetCalculate", "Calculator", FormMethod.Get))
+{
+    <div class="form-group">
+        <label>First Arbitrary: </label>
+        <input type="text" class="form-control" name="firstNumber" value="" />
+    </div>
+    <div class="form-group">
+        <label>Second Arbitrary: </label>
+        <input type="text" class="form-control" name="secondNumber" value="" />
+    </div>
+    <div class="form-group">
+        <div class="radio-inline">
+            <label class="btn btn-default">+ <input type="checkbox" name="arithmetic" value="plus" /></label>
+        </div>
+        <div class="radio-inline">
+            <label class="btn btn-default">- <input type="checkbox" name="arithmetic" value="minus" /></label>
+        </div>
+        <div class="radio-inline">
+            <label class="btn btn-default">* <input type="checkbox" name="arithmetic" value="multiply" /></label>
+        </div>
+        <div class="radio-inline">
+            <label class="btn btn-default">/ <input type="checkbox" name="arithmetic" value="divide" /></label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">CALCULATE!</button>
+}
+<h1>[Get] Result: @ViewBag.Result</h1>
